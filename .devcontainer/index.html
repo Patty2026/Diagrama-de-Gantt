@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cronograma Gantt – DIF</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',Arial,sans-serif; background:#f0f4f8; color:#1a202c; }
+.header { background:linear-gradient(135deg,#1e3a5f,#2d6a9f); color:white; padding:24px 30px; text-align:center; }
+.header h1 { font-size:20px; font-weight:700; }
+.header p  { font-size:12px; margin-top:5px; opacity:.85; }
+.container { padding:24px 30px; }
+.legend { display:flex; gap:18px; flex-wrap:wrap; background:white; border-radius:10px; padding:12px 18px; margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,.08); align-items:center; font-size:12px; }
+.legend-title { font-weight:700; color:#4a5568; }
+.ldot { width:13px; height:13px; border-radius:3px; display:inline-block; margin-right:5px; vertical-align:middle; }
+.gantt-wrap { background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,.1); overflow-x:auto; }
+table { border-collapse:collapse; min-width:860px; width:100%; }
+thead tr:first-child th { background:#1e3a5f; color:white; padding:10px 6px; font-size:12px; text-align:center; border:1px solid #163052; }
+thead tr:first-child th:first-child { text-align:left; padding-left:14px; }
+thead tr:nth-child(2) th { background:#2d6a9f; color:white; padding:7px 3px; font-size:11px; text-align:center; border:1px solid #245588; }
+.today-h { background:#bf360c !important; font-weight:700 !important; }
+.phase-row td { padding:9px 14px; font-size:12px; font-weight:700; color:white; }
+.ph1 { background:#1565c0; }
+.ph2 { background:#2e7d32; }
+.ph3 { background:#6a1b9a; }
+tbody tr.ar:nth-child(even) td { background:#f7fafd; }
+tbody tr.ar:nth-child(odd)  td { background:#fff; }
+tbody tr.ar td { padding:7px 3px; font-size:11px; border-bottom:1px solid #e8ecf0; vertical-align:middle; }
+.an { min-width:230px; max-width:250px; padding-left:20px !important; padding-right:6px !important; line-height:1.4; color:#2d3748; }
+.wc { width:30px; min-width:30px; text-align:center; border-right:1px solid #e8ecf0; }
+.today-col { background:#fff3e0 !important; }
+.b { border-radius:3px; height:17px; margin:auto; }
+.b1 { background:linear-gradient(90deg,#42a5f5,#1565c0); }
+.b2 { background:linear-gradient(90deg,#66bb6a,#1b5e20); }
+.b3 { background:linear-gradient(90deg,#ce93d8,#6a1b9a); }
+.summary { display:flex; gap:14px; margin-top:20px; flex-wrap:wrap; }
+.sc { flex:1; min-width:170px; background:white; border-radius:10px; padding:16px 18px; box-shadow:0 1px 4px rgba(0,0,0,.08); border-top:4px solid; }
+.sc h3 { font-size:13px; font-weight:700; margin-bottom:5px; }
+.sc p  { font-size:12px; color:#718096; line-height:1.5; }
+.footer { text-align:center; padding:18px; font-size:11px; color:#a0aec0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📋 Cronograma de Gantt — Protocolo de Mantenimiento Preventivo</h1>
+  <p>Sistema DIF &nbsp;|&nbsp; Febrero – Junio 2026 &nbsp;|&nbsp; 29 actividades · 20 semanas · 3 fases</p>
+</div>
+<div class="container">
+  <div class="legend">
+    <span class="legend-title">Fases:</span>
+    <span><span class="ldot" style="background:#42a5f5"></span>Fase 1 – Inducción y Diagnóstico</span>
+    <span><span class="ldot" style="background:#66bb6a"></span>Fase 2 – Capacitación</span>
+    <span><span class="ldot" style="background:#ce93d8"></span>Fase 3 – Cierre y Seguimiento</span>
+    <span><span class="ldot" style="background:#bf360c;border-radius:50%"></span>Semana actual (Feb S3)</span>
+  </div>
+  <div class="gantt-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2" style="min-width:245px;text-align:left;padding-left:14px;">Actividad</th>
+        <th colspan="4">FEBRERO</th>
+        <th colspan="4">MARZO</th>
+        <th colspan="4">ABRIL</th>
+        <th colspan="4">MAYO</th>
+        <th colspan="4">JUNIO</th>
+      </tr>
+      <tr>
+        <th>S1</th><th>S2</th><th class="today-h">S3</th><th>S4</th>
+        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+      </tr>
+    </thead>
+    <tbody>
+<!-- FASE 1 -->
+<tr class="phase-row"><td colspan="21" class="ph1">⬡ FASE 1: Inducción y Diagnóstico (Febrero – Marzo 2026)</td></tr>
+
+<tr class="ar"><td class="an">Presentación del plan de trabajo a las autoridades del DIF</td>
+<td class="wc"><div class="b b1"></div></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Aplicación de cuestionarios estructurados a jefes de área / usuarios clave</td>
+<td class="wc"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Observación directa de equipos e instalaciones</td>
+<td class="wc"></td><td class="wc"><div class="b b1"></div></td><td class="wc today-col"><div class="b b1"></div></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Diagnóstico técnico completo de hardware y software</td>
+<td class="wc"></td><td class="wc"><div class="b b1"></div></td><td class="wc today-col"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Revisión documental de inventarios y registros existentes</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Análisis de datos recopilados en fase diagnóstico</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"><div class="b b1"></div></td>
+<td class="wc"><div class="b b1"></div></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Diseño de procedimientos de mantenimiento de software y hardware</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Desarrollo de sistema de inventario y control de activos</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Definición de roles y responsabilidades</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Estructura de protocolo de mantenimiento preventivo</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Definición de indicadores de desempeño (KPIs)</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b1"></div></td><td class="wc"><div class="b b1"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Validación del protocolo con personal externo</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b1"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<!-- FASE 2 -->
+<tr class="phase-row"><td colspan="21" class="ph2">⬡ FASE 2: Capacitación (Marzo – Abril 2026)</td></tr>
+
+<tr class="ar"><td class="an">Elaboración de materiales de capacitación (presentaciones, manuales, videos)</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b2"></div></td>
+<td class="wc"><div class="b b2"></div></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Capacitación en procedimientos de reporte de fallas</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"><div class="b b2"></div></td><td class="wc"><div class="b b2"></div></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Evaluación de conocimientos adquiridos</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"><div class="b b2"></div></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Entrega de manuales y guías de referencia rápida</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"><div class="b b2"></div></td><td class="wc"><div class="b b2"></div></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Selección de 3 equipos representativos para piloto</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b2"></div></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Aplicación del mantenimiento preventivo en equipos piloto</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b2"></div></td><td class="wc"><div class="b b2"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Documentación detallada del proceso y tiempos requeridos</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b2"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Monitoreo de desempeño de equipos post-mantenimiento</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b2"></div></td>
+<td class="wc"><div class="b b2"></div></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<!-- FASE 3 -->
+<tr class="phase-row"><td colspan="21" class="ph3">⬡ FASE 3: Cierre y Seguimiento (Mayo – Junio 2026)</td></tr>
+
+<tr class="ar"><td class="an">Extensión del protocolo a todos los equipos de la institución</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Creación del inventario digital completo de hardware y software</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Aplicación de mantenimiento preventivo completo</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Aplicación de cuestionarios de satisfacción post-implementación</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b3"></div></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Documentación de lecciones aprendidas</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Elaboración del informe final de implementación</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b3"></div></td>
+<td class="wc"><div class="b b3"></div></td><td class="wc"></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Presentación de resultados a autoridades institucionales</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"><div class="b b3"></div></td><td class="wc"></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Entrega de protocolo documentado y plan de mantenimiento</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td><td class="wc"></td></tr>
+
+<tr class="ar"><td class="an">Recomendaciones para mejora continua</td>
+<td class="wc"></td><td class="wc"></td><td class="wc today-col"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"></td><td class="wc"></td>
+<td class="wc"></td><td class="wc"></td><td class="wc"><div class="b b3"></div></td><td class="wc"><div class="b b3"></div></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="summary">
+    <div class="sc" style="border-color:#42a5f5">
+      <h3 style="color:#1565c0">🔵 Fase 1 · Inducción y Diagnóstico</h3>
+      <p><strong>Febrero – Marzo 2026 · 8 semanas</strong><br>12 actividades. Desde la presentación institucional hasta la validación del protocolo con personal externo.</p>
+    </div>
+    <div class="sc" style="border-color:#66bb6a">
+      <h3 style="color:#2e7d32">🟢 Fase 2 · Capacitación</h3>
+      <p><strong>Marzo – Abril 2026 · 6 semanas</strong><br>8 actividades. Materiales didácticos, formación del personal y prueba piloto en 3 equipos.</p>
+    </div>
+    <div class="sc" style="border-color:#ce93d8">
+      <h3 style="color:#6a1b9a">🟣 Fase 3 · Cierre y Seguimiento</h3>
+      <p><strong>Mayo – Junio 2026 · 8 semanas</strong><br>9 actividades. Implementación total, inventario digital, informe final y entrega institucional.</p>
+    </div>
+  </div>
+  <div class="footer">Protocolo de Mantenimiento Preventivo — Sistema DIF &nbsp;|&nbsp; 29 actividades · 20 semanas · La columna naranja indica la semana actual</div>
+</div>
+</body>
+</html>
